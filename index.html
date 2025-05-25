@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BidUp-Home</title>
+        <script type="module" src="./pages/listings.js" defer></script>
+        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+       <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon_io (2)">
+       <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon_io (2)">
+       <link rel="manifest" href="/site.webmanifest">  
+    </head>
+    <body class="min-h-screen flex flex-col bg-base">
+        <header></header>
+        <main class="flex-grow">
+            <h1 class="text-2xl font-bold mb-6 text-center ">Welcome to BidUp</h1>
+            <p class="mb-6 text-center">Here you can find the latest auctions and listings.</p>
+
+            <section id="carouselWrap" class="relative mx-auto mb-12 max-w-md overflow-hidden">
+                <div id="carouselTrack"
+                     class="flex transition-transform duration-300 ease-out">
+                  
+                </div>
+              
+                <!-- navigasjons-piler -->
+                <button id="prevBtn"
+                        class="absolute left-0 top-1/2 -translate-y-1/2 bg-banner
+                               px-3 py-1 rounded-l shadow">‹</button>
+                <button id="nextBtn"
+                        class="absolute right-0 top-1/2 -translate-y-1/2 bg-banner
+                               px-3 py-1 rounded-r shadow">›</button>
+              </section>
+              
+
+          <section id="listingGrid"
+          class="grid gap-6
+          sm:grid-cols-2
+          lg:grid-cols-3
+          xl:grid-cols-4"></section>
+            <div class="flex justify-center mt-8">
+                <button id="loadMoreBtn"
+                class="bg-banner px-6 py-2 rounded shadow hover:bg-banner/90">
+                Load more</button>
+            </div>
+        </main>
+    
+        <script type="module" src="./js/index.js"></script>
+        <script type="module">
+            import { guard, userName, getCredits } from './api/auth.js'; 
+            import { renderHeader }                from './components/header.js'; 
+            guard();
+            renderHeader();
+          
+            document.getElementById('navUserName').textContent = userName;
+            document.getElementById('navCredits').textContent  = await getCredits();
+          </script>
+          
+          <footer></footer>
+    </body>
+</html>

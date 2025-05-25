@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login / Register</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen flex flex-col bg-base">
+  <header></header>
+  <main class="flex-grow">
+
+    <section class="min-h-screen bg-[#D8CFC0] flex flex-col items-center justify-center px-4 py-12">
+      <!-- Logg inn -->
+      <form id="loginForm" class="flex flex-col items-center max-w-xs w-full text-center">
+        <h2 class="text-lg font-medium text-[#2C2620] mb-2">Log in</h2>
+        <input type="email" id="loginEmail" placeholder="E-Mail adress" class="bg-[#F8F3EB] border border-[#D8CFC0] text-black px-3 py-2 w-full mb-2 shadow focus:outline-none" autocomplete="email" required />
+        <input type="password" id="loginPassword" placeholder="Password" class="bg-[#F8F3EB] border border-[#D8CFC0] text-black px-3 py-2 w-full mb-2 shadow focus:outline-none" autocomplete="current-password" required />
+        <button id="loginBtn" type="submit" class="bg-[#2C2620] text-white px-4 py-1 w-full hover:opacity-90">LOG IN!</button>
+      </form>
+    
+      <p class="my-4 text-[#2C2620] text-md">Not a member yet?</p>
+    
+      <!-- Registrering -->
+      <form id="registerForm" class="flex flex-col items-center max-w-xs w-full text-center">
+        <h2 class="text-lg font-medium text-[#2C2620] mb-2">Register here!</h2>
+        <input type="text" id="registerName" placeholder="Choose a username"
+        class="bg-[#F8F3EB] border border-[#D8CFC0] text-black px-3 py-2 w-full mb-2 shadow focus:outline-none"
+        autocomplete="username" required />
+
+        <input type="email" id="registerEmail" placeholder="E-Mail adress" class="bg-[#F8F3EB] border border-[#D8CFC0] text-black px-3 py-2 w-full mb-2 shadow focus:outline-none" autocomplete="email" required />
+        <input type="password" id="registerPassword" placeholder="Password" class="bg-[#F8F3EB] border border-[#D8CFC0] text-black px-3 py-2 w-full mb-2 shadow focus:outline-none" autocomplete="new-password" required />
+        <input type="password" id="repeatPassword" placeholder="Repeat Password" class="bg-[#F8F3EB] border border-[#D8CFC0] text-black px-3 py-2 w-full mb-4 shadow focus:outline-none" autocomplete="new-password" required />
+        <button id="registerBtn" type="submit" class="bg-[#2C2620] text-white px-4 py-1 w-full hover:opacity-90">REGISTER</button>
+      </form>
+    
+      <p id="message" class="text-red-600 mt-4 text-sm text-center"></p>
+    </section>
+      
+    
+    
+      
+      
+  </main>
+  <footer></footer>
+
+  <script type="module" src="api/auth.js"></script>
+  <script type="module" src="./js/index.js"></script>
+</body>
+</html>
